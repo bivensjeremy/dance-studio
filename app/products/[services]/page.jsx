@@ -1,5 +1,5 @@
 
-import ServiceCard from "@/app/components/serviceCard";
+import ServiceCard from "@/app/components/ServiceCard";
 import { serviceData } from "../../data";
 
 export async function generateStaticParams() {
