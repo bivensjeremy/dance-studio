@@ -5,7 +5,7 @@ import { fredoka } from "../fonts";
 const CallToAction = () => {
     return (
         <div id="ContactUs" className="flex flex-col md:flex-row gap-3 justify-between container m-auto py-5">
-            <div className="w-1/3 text-center m-auto">
+            <div className="md:w-1/3 text-center m-auto">
                 <h3 className={`${fredoka.className} text-3xl text-center pb-3`}>Are you ready to take your business to the next level with your own website?</h3>
 
                 <h4 className="text-2xl font-bold text-center uppercase">Contact me today!</h4>

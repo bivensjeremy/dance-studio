@@ -11,7 +11,8 @@ const NavBar = () => {
             items-center
             justify-between
             py-12
-            px-20
+            px-6
+            md:px-20
         ">
 
                 <NavLink href='https://bivensblueprint.com'>
