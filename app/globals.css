@@ -1,154 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import "@heroui/styles";
 
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  background: #dbdee0;
-  color: #16003B;
-  scroll-behavior: smooth;
-}
-
-/* reset */
-button {
-  all: unset;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.btn {
-  @apply 
-  inline-block 
-  px-6 
-  py-3 
-  bg-[#F73D93] 
-  font-medium 
-  text-sm 
-  leading-tight 
-  uppercase 
-  rounded 
-  shadow-md 
-  hover:bg-[#b02d6a]
-  hover:shadow-lg 
-  focus:shadow-lg 
-  focus:outline-none 
-  focus:ring-0 
-  active:bg-[#F73D93] 
-  active:shadow-lg 
-  transition 
-  duration-150 
-  ease-in-out 
-  disabled:opacity-25 
-  text-white
-}
-
-.navBtn {
-  @apply 
-  inline-block 
-  px-6 
-  py-2.5 
-  text-sm 
-  leading-tight 
-  uppercase 
-  rounded 
-  hover:bg-[#F73D93] 
-  hover:shadow-lg 
-  hover:text-slate-100 
-  focus:text-slate-100 
-  focus:bg-[#F73D93]
-  focus:shadow-lg 
-  transition 
-  duration-150 
-  ease-in-out 
-  hover:cursor-pointer
-}
-
-.sectionBtn {
-  @apply 
-  flex
-  justify-center
-  text-center
-  bg-white 
-  rounded-3xl
-  text-3xl
-  hover:bg-[#F73D93] 
-  hover:shadow-lg 
-  hover:text-slate-100 
-  focus:text-slate-100 
-  focus:bg-[#F73D93]
-  focus:shadow-lg 
-  transition 
-  duration-150 
-  ease-in-out 
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
 
-.DropdownMenuContent {
-  background-color: white;
-  border-radius: 6px;
-  padding: 5px;
-  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
-  animation-duration: 400ms;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
+/* === Fonts === */
+.font-body {
+  font-family: var(--font-body);
 }
-.DropdownMenuContent[data-side='top'] {
-  animation-name: slideDownAndFade;
+.font-heading {
+  font-family: var(--font-heading);
 }
-.DropdownMenuContent[data-side='right'] {
-  animation-name: slideLeftAndFade;
-}
-.DropdownMenuContent[data-side='bottom'] {
-  animation-name: slideUpAndFade;
-}
-.DropdownMenuContent[data-side='left'] {
-  animation-name: slideRightAndFade;
+.font-accent {
+  font-family: var(--font-accent);
 }
 
-.DropdownMenuItem {
-  font-size: 13px;
-  line-height: 1;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  height: 25px;
-  padding: 0 5px;
-  position: relative;
-  padding-left: 25px;
-  padding-right: 25px;
-  user-select: none;
-  outline: none;
+body {
+  font-family: var(--font-body);
 }
 
-.DropdownMenuItem[data-disabled]{
-  color: var(--mauve8);
-  pointer-events: none;
-}
-.DropdownMenuItem[data-highlighted] {
-  background-color: var(--violet9);
-  color: var(--violet1);
+:root {
+  /* Override default colors */
+  --background: #dbdee0;
+  --foreground: #16003B;
+  --surface: #ffffff;
+  --surface-foreground: #1f2937;
+  --accent: #F73D93;
+  --accent-foreground: #f5f5f5;
+  --accent-hover: #b02d6a;
+  --secondary: #1f3c88;
 }
 
-.DropdownMenuArrow {
-  fill: white;
-}
+/* reset */
+/* button {
+  all: unset;
+} */
+
 
 @keyframes slideUpAndFade {
   from {
@@ -192,28 +94,4 @@ a {
     opacity: 1;
     transform: translateX(0);
   }
-}
-
-.customShadow{
-  filter: drop-shadow(5px 5px 5px #16003B)
-}
-
-.inputStyle {
-  @apply 
-  block 
-  mb-2 
-  w-full 
-  px-3 
-  py-3 
-  bg-white 
-  border 
-  border-solid 
-  border-gray-300 
-  rounded-md  
-  transition 
-  ease-in-out 
-  focus:text-gray-700 
-  focus:bg-white 
-  focus:border-[#F73D93] 
-  focus:outline-none
 }

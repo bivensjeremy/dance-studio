@@ -3,7 +3,7 @@ export const policyData = [
         id: 1,
         title: "Important Info",
         data: [
-        "Dreamers Dance Studio is a sample website for Bivens Blueprint, LLC. designed for portfolio purposes. It demonstrates a template for what your business website could look like. Complete with language for policies and an application, this website is intended to inspire your ideas for a website!"
+        "Dreamers Dance Studio is a sample website for Blueprint Web Dev designed for portfolio purposes. It demonstrates a template for what your business website could look like. Complete with language for policies and an application, this website is intended to inspire ideas for your website!"
         ]
     },
     {
@@ -14,7 +14,7 @@ export const policyData = [
             'Model Program: $100.00 ',
             'Photography Program: $100.00',
             'Dance Classes: $100.00 hour',
-            'Prices ar monthly, due by the first of each month and after the 5th it is considered late. A late fee will be applied to late accounts.',
+            'Prices are monthly, due by the first of each month and after the 5th it is considered late. A late fee will be applied to late accounts.',
             'All fees are non-refundable',
             'You will not be allowed to participate if tuition is not paid.',
         ]
@@ -26,7 +26,7 @@ export const policyData = [
             'No make-ups or refund, do not even ask.',
             'If you wish to withdraw, do not expect prorated fees. Your money is mine.',
             'We expect commitment and dedication. You must bleed to succeed!',
-            'If you cannot dress or have bad taste, do not expect us to babysit you. Swag cannot be taught.',
+            'If you cannot dress or have bad taste, do not expect us to babysit you. Style cannot be taught.',
             'Being on time is late. Being early is on time',
             'One band, one sound',
             'Teachers reserve the right to dismiss a student from class if they are consistently late.',

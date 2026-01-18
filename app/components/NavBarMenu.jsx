@@ -1,6 +1,4 @@
-'use client'
-import React from 'react';
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { Button, Dropdown } from "@heroui/react";
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 
@@ -33,30 +31,23 @@ const navBarMenuTags = [
 ]
 
 const NavBarMenu = () => {
-    return (
-        <DropdownMenu.Root>
-            <DropdownMenu.Trigger asChild>
-                <button className="navBtn">
-                    <Menu />
-                </button>
-            </DropdownMenu.Trigger>
-
-            <DropdownMenu.Portal>
-                <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
-                    {navBarMenuTags.map((item) => (
-                        <Link
-                            key={item.id}
-                            href={`/products${item.url}`} 
-                            className='hover:text-[#F73D93] focus:text-[#F73D93] transition duration-150 ease-in-out'>
-                            <DropdownMenu.Item className="DropdownMenuItem">
-                                {item.name}
-                            </DropdownMenu.Item>
-                        </Link>
-                    ))}
-                    <DropdownMenu.Arrow className="fill-white" />
-                </DropdownMenu.Content>
-            </DropdownMenu.Portal>
-        </DropdownMenu.Root>
+  return (
+    <Dropdown>
+      <Button aria-label="Menu" isIconOnly variant="ghost" size="lg">
+        <Menu className="w-8 h-8 text-accent"/>
+      </Button>
+      <Dropdown.Popover>
+        <Dropdown.Menu>
+          {navBarMenuTags.map(({ name, url }, idx) => (
+                <Dropdown.Item key={idx} className="font-semibold hover:text-accent focus:text-accent">
+                  <Link href={`/products${url}`}>
+                    {name}
+                </Link>
+              </Dropdown.Item>
+          ))}
+        </Dropdown.Menu>
+      </Dropdown.Popover>
+    </Dropdown>
     );
 };
 

@@ -1,10 +1,11 @@
 'use client'
 
 import { ChevronLeft, Home } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import NavBarMenu from "./NavBarMenu";
 import { useRouter } from "next/navigation";
+import { Button } from "@heroui/react";
+import { Label } from "@heroui/react";
 
 const NavBarProducts = () => {
     const router = useRouter();
@@ -17,35 +18,22 @@ const NavBarProducts = () => {
             flex-wrap
             items-center
             py-20
-            
         ">
-        {/* <div className="navBtn">
-            <Link href='https://bivensblueprint.com'>
-                <Image
-                    src='/blueprint_logo.png'
-                    alt='Blueprint Logo'
-                    width={50}
-                    height={50}
-                />
-            </Link>
-        </div> */}
-        
             <nav className="flex flex-row w-full justify-around mx-auto">
-
-                <button type="button" className="navBtn" onClick={() => router.back()}>
-                    <ChevronLeft />
-                </button>
+                <Button isIconOnly variant="ghost" size="lg" onClick={() => router.back()}>
+                    <ChevronLeft className="w-8 h-8 text-accent" />
+                </Button>
                 
-                <Link href='/'>
-                    <button type="button" className="navBtn">
-                        <Home />
-                    </button>
+                <Link href='/' className="flex flex-col text-center">
+                    <Button isIconOnly type="button" size="lg" variant='ghost'>
+                        <Home className="w-8 h-8 text-accent" />
+                    </Button>
+                    {/* <Label className="text-accent">Home</Label> */}
                 </Link>
                 
                 <NavBarMenu />
                 
             </nav>
-
         </header>
     );
 }

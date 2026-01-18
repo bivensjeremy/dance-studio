@@ -2,38 +2,28 @@
 import ServiceCard from "@/app/components/ServiceCard";
 import { serviceData } from "../../data";
 
-export async function generateStaticParams() {
-    const services = await serviceData;
-
-    return services.map((service) => ({
-        services: service.id.toString(), service
+export function generateStaticParams() {
+    return serviceData.map((service) => ({
+        services: service.title
     }));
 }
 
-const ServicePage = ({ params }) => {
-    
-    return(
-        <div>
-            {(function() {
-                switch (params.services) {
-                    case 'Dance':
-                        return (
-                            <ServiceCard props={serviceData[0]} />
-                        )
-                    case 'Model':
-                        return (
-                            <ServiceCard props={serviceData[1]} />
-                        )
-                    case 'Photography':
-                        return(
-                            <ServiceCard props={serviceData[2]} />
-                        )
-                    default:
-                        break;
-                }
-            }) ()}
-        </div>
-    )
-}
+const ServicePage = async ({ params }) => {
+  const { services } = await params;
+
+  const service = serviceData.find(
+    (s) => s.title === services
+  );
+
+  if (!service) {
+    return <p className="p-10 text-center">Service not found</p>
+  }
+  
+  return (
+    <div>
+      <ServiceCard {...service} />
+    </div>
+  );
+};
 
 export default ServicePage;

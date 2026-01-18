@@ -1,36 +1,27 @@
-const { Star } = require("lucide-react");
-
+import { Star } from "lucide-react";
 
 const Descriptions = () => {
-    
-    const starBorder = () => {
-        let content = [];
-        for (let i = 0; i < 10; i++) {
-            content.push(
-                <Star fill="#F73D93" strokeWidth={0} size={12} id={content.id} />
-            )
-        }
-        return content;
+    const BorderSection = () => {
+        return (
+            <div className="flex flex-row justify-center py-10 gap-5">
+                {Array.from({ length: 10 }).map((_, i) => (
+                    <Star key={i} fill="#F73D93" strokeWidth={0} size={12} />
+                ))}
+            </div>
+        );
     };
 
-    const BorderSection = () => {
-        return(
-            <div className="flex flex-row justify-center py-6 gap-5">
-                {starBorder()}
-            </div>
-        )
-    }
 
     return (
-        <div id="About" className="container m-auto py-6 px-5">
-            {BorderSection()}
+        <section id="About" className="container m-auto py-6 px-5">
+            <BorderSection />
 
-            <p className="">
-                <span style={{ color: '#F73D93', fontWeight: 'bold' }}>Dreamers Dance Studio</span> is a website template to showcase a premium dance studio website for your enjoyment! Features of this site include an image gallery, contact information, a sample policy, enrollment application, and descriptions for services offered. The information is all template language and used for sample purposes. Dreamers Dance Studio is not a real studio. Using the Contact page will redirect you to Bivens Blueprint, LLC. where you can view my other work. Feel free to contact me with inquiries for your future project.   
+            <p className="max-w-7xl text-center mx-auto text-lg">
+                <span className="text-accent font-bold">Dreamers Dance Studio</span> is a portfolio project to showcase a dance studio website. This project features clean typography, images, accent colors and several sections of information. The information is all template text used for sample purposes. Dreamers Dance Studio is not a real studio. The contact information will redirect you to Blueprint Web Dev where you can view my other work. Feel free to contact me with inquiries for your future project.   
             </p>
 
-            {BorderSection()}
-        </div>
+            <BorderSection />
+        </section>
     );
 }
 

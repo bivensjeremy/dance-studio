@@ -1,6 +1,26 @@
-import Image from "next/image";
+'use client'
 import NavBarMenu from "./NavBarMenu";
-import NavLink from "./NavLink";
+import { ButtonGroup } from "@heroui/react";
+import Link from 'next/link'
+
+const NavBarContent = [
+    {
+        href: "#About",
+        title: "About Dreamers"
+    },
+    {
+        href: "#OurServices",
+        title: "Our Services",
+    },
+    {
+        href: "#ViewOurWork",
+        title: "View Our Work",
+    },
+    {
+        href: "#ContactUs",
+        title: "Contact Us"
+    }
+]
 
 const NavBar = () => {
     return (
@@ -14,30 +34,17 @@ const NavBar = () => {
             px-6
             md:px-20
         ">
+            <nav className="hidden lg:flex flex-row mx-auto">
+                <ButtonGroup variant="secondary">
+                {NavBarContent.map(({ href, title }, idx) => (
+                    <Link key={idx} className="button button--secondary px-6" href={href}>
+                        {title}
+                    </Link>
+                ))}
+                </ButtonGroup>
+            </nav>
 
-                <NavLink href='https://bivensblueprint.com'>
-                    <Image
-                        src='/blueprint_logo.png'
-                        alt='Blueprint Logo'
-                        width={50}
-                        height={50}
-                    />
-                </NavLink>
-
-                <nav className="hidden lg:flex flex-row mx-auto">
-                    <a className="navBtn" href='/#About'>About Dreamers</a>
-
-                    <a className="navBtn" href='/#OurServices'>Our Services</a>
-
-                    <a className="navBtn" href='/#ViewOurWork'>View Our Work</a>
-
-                    <a className="navBtn" href='/#ContactUs'>Contact Us</a>
-                </nav>
-            
-                <NavBarMenu />
-            
-        
-
+            <NavBarMenu />
         </header>
     );
 }

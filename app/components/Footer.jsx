@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Facebook from '../../public/facebook.svg'
-import Twitter from '../../public/twitter.svg'
 import Instagram from '../../public/instagram.svg'
 import Linkedin from '../../public/linkedin.svg'
 import Github from '../../public/github.svg'
@@ -9,72 +8,55 @@ import Mail from '../../public/mail.svg'
 
 const footerData = [
     {
-        id: 1,
-        link: 'https://www.facebook.com/bivens.jeremy',
+        link: 'https://www.facebook.com/bivensblueprint',
         image: Facebook,
-        alt: 'Facebook Icon',
+        alt: 'Facebook link',
+        color: '#0866FF'
     },
     {
-        id: 2,
-        link: 'https://www.twitter.com/_Bivens',
-        image: Twitter,
-        alt: 'Twitter Icon',
-    },
-    {
-        id: 3,
-        link: 'https://wwww.instagram.com/bivensjeremy',
+        link: 'https://www.instagram.com/bivensjeremy',
         image: Instagram,
-        alt: 'Instagram Icon',
+        alt: 'Instagram link',
+        color: '#FF0069'
     },
     {
-        id: 4,
         link: 'https://www.linkedin.com/in/bivensjeremy',
         image: Linkedin,
         alt: 'LinkedIn Icon',
+        color: '#01B0F0'
     },
     {
-        id: 5,
         link: 'https://www.github.comm/bivensjeremy',
         image: Github,
         alt: 'GitHub Icon',
+        color: '#181717'
     },
     {
-        id: 6,
-        link: 'mailto:admin@bivensblueprint.com?subject=Email From Website',
+        link: 'mailto:admin@bivensblueprint.com?subject=Email From Dreamers Website',
         image: Mail,
         alt: 'Mail Icon',
     },
 ]
 
-const LinkIcon = ({ id, link, image, alt }) => {
-    return (
-        <div key={id} className='inline-flex mx-2 rounded-full hover:bg-[#F73D93] focus:bg-[#F73D93] transition duration-150 ease-in-out p-1'>
-            <Link href={link} target="_blank" rel='noopener'>
-                <Image 
-                    src={image}
-                    height={20}
-                    width={20}
-                    alt={alt}
-                    className=""
-                />
-            </Link>
-        </div>
-    );
-}
-
 const Footer = () => {
     return (
         <footer>
             <div className='text-center pt-3'>
-                <div>
-                    {footerData.map(
-                        LinkIcon
-                    )}
-                </div>
-
+                {footerData.map(({ link, image, alt, color }, idx) => (
+                    <div key={idx} className='inline-flex mx-2 rounded-lg p-1 hover:border-accent focus:border-accent hover:border focus:hover transition duration-150 ease-in-out '>
+                        <Link href={link} target="_blank" rel='noopener'>
+                            <Image 
+                                src={image}
+                                height={20}
+                                width={20}
+                                alt={alt}
+                            />
+                        </Link>
+                    </div>
+                ))}
                 <div>
                     <p className='uppercase text-xs'>
-                        &copy; {new Date().getFullYear()} Bivens Blueprint, LLC
+                        &copy; {new Date().getFullYear()} Blueprint Web Dev | Bivens Blueprint, LLC
                     </p>
                 </div>
                     

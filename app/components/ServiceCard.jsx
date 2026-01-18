@@ -1,13 +1,14 @@
 import Image from "next/image";
-import { rockSalt } from "../fonts";
-import NavLink from "./NavLink";
 import ServiceGallery from "./ServiceGallery";
+import { Button } from "@heroui/react";
+import Link from "next/link";
 
-const ServiceCard = ({ props }) => {
+const ServiceCard = (props) => {
+    
     return (
         <div className="container py-12">
-            <div className="flex flex-col md:flex-row gap-5">
-                <div className="flex w-full max-h-[800px]">
+            <div className="flex flex-col lg:flex-row gap-5">
+                <div className="flex w-full max-h-200">
                     <Image
                         src={props.headerImage}
                         alt="Service Header Image"
@@ -18,7 +19,7 @@ const ServiceCard = ({ props }) => {
                 </div>
 
                 <div className="grow">
-                    <div className={rockSalt.className}>
+                    <div className='font-accent'>
                         <h2 className="text-6xl py-7">
                             {props.title}
                         </h2>
@@ -29,11 +30,12 @@ const ServiceCard = ({ props }) => {
                     </div>
                     
                     <div>
-                        <NavLink className="btn" href="/products/enrollment">
-                            Application
-                        </NavLink>
+                        <Link href='/products/enrollment'>
+                            <Button className='rounded-lg' size="lg">
+                                Application
+                            </Button>
+                        </Link>
                     </div>
-                    
                 </div>
             </div>
             <ServiceGallery props={props.photos} />
