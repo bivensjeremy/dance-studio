@@ -11,31 +11,31 @@ const AppForm = () => {
         <form>
             <div className="block py-10 m-auto max-w-4xl">
                 <div>
-                    <div className="grid grid-cols-2 md:gap-6 pb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-4">
                         <InputField label="firstName" placeholder="First Name" />
                         <InputField label="lastName" placeholder="Last Name" />
                     </div>
 
-                    <div className="grid grid-cols-1 md:gap-6 pb-4">
+                    <div className="grid grid-cols-1 gap-6 pb-4">
                         <InputField label="email" placeholder="Email" text='email' />
                     </div>
 
-                    <div className="grid grid-cols-1 md:gap-6 pb-4">
+                    <div className="grid grid-cols-1 gap-6 pb-4">
                         <InputField label="street" placeholder="Street Address" />
                     </div>
 
-                    <div className="grid grid-cols-3 md:gap-6 pb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-4">
                         <InputField label="city" placeholder="City" />
                         <InputField label="state" placeholder="State" />
                         <InputField label="zip" placeholder="Zip Code" />
                         
                     </div>
 
-                    <div className="grid grid-cols-1 md:gap-6 pb-4">
+                    <div className="grid grid-cols-1 gap-6 pb-4">
                         <SelectField placeholder="What is your area of interest?" />
                     </div>
 
-                    <div className="grid grid-cols-1 md:gap-2 pb-4">
+                    <div className="grid grid-cols-1 gap-2 pb-4">
                         <CheckboxField 
                             name="acknowledgement"
                             label="If this were a real acknowledgement it would say something like: I, understand and accept any risks associated with my participation and accept the possibility of injury. I waive my right to sue if I am injured in any way throughout my participation. Furthermore, I give consent for Dreamers to utilize photography and/or videos of me in promotional and business use. But since this is not a real consent form, it is just some random text."

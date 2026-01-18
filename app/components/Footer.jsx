@@ -56,7 +56,7 @@ const Footer = () => {
                 ))}
                 <div>
                     <p className='uppercase text-xs'>
-                        &copy; {new Date().getFullYear()} Blueprint Web Dev | Bivens Blueprint, LLC
+                        &copy; {new Date().getFullYear()} Blueprint Web Dev | Bivens Media Group
                     </p>
                 </div>
                     
