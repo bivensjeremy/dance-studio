@@ -28,10 +28,7 @@ export const reviews = [
 
 
 export const SocialProof = () => {
-    const [emblaRef] = useEmblaCarousel(
-    { loop: true, align: "center" },
-    [Autoplay({ delay: 4000 })]
-  );
+    const [emblaRef] = useEmblaCarousel();
   
     return(
         <div>
@@ -47,7 +44,7 @@ export const SocialProof = () => {
 
             <div className="w-full max-w-5xl mx-auto">
                 <div className="overflow-hidden" ref={emblaRef}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
                         {reviews.map(({ name, role, text, image }, idx) => (
                             <Card key={idx} className="flex flex-col h-full">
                                 <Card.Header className="flex flex-row items-center gap-4 pb-4">

@@ -6,7 +6,7 @@ import { Surface } from "@heroui/react";
 
 const SectionsCard = ({ title, cardImage }, idx) => {
     return(
-        <div key={idx} id="OurServices" className="flex justify-center h-96">
+        <div key={idx} id="OurServices" className="flex justify-center h-96 p-1">
             <Surface className="flex flex-col rounded-3xl max-w-sm relative w-full text-3xl justify-center text-center text-accent overflow-hidden hover:bg-accent hover:text-white transition duration-150 ease-in-out">
                 <Link href={`/products/${title}`}>
                     <Image 
