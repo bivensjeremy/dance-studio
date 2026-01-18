@@ -12,7 +12,7 @@ export const Video = ({children}) => {
       </video>
 
       {/* Overlay */}
-    <div className="absolute backdrop-blur-sm  bg-background/30 inset-0 bg-linear-to-b from-transparent from-50% to-background" />
+    <div className="absolute backdrop-blur-x  bg-background/30 inset-0 bg-linear-to-b from-transparent from-50% to-background" />
 
       {/* Content */}
       <div className="relative z-10">
