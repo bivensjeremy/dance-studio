@@ -39,10 +39,8 @@ const NavBarMenu = () => {
       <Dropdown.Popover>
         <Dropdown.Menu>
           {navBarMenuTags.map(({ name, url }, idx) => (
-                <Dropdown.Item key={idx} className="font-semibold hover:text-accent focus:text-accent">
-                  <Link href={`/products${url}`}>
-                    {name}
-                </Link>
+                <Dropdown.Item as={Link} key={idx} className="font-semibold hover:text-accent focus:text-accent" href={`/products${url}`}>
+                  {name}
               </Dropdown.Item>
           ))}
         </Dropdown.Menu>

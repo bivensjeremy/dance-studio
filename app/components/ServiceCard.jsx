@@ -20,7 +20,7 @@ const ServiceCard = (props) => {
 
                 <div className="grow">
                     <div className='font-accent'>
-                        <h2 className="text-6xl py-7">
+                        <h2 className="text-4xl md:text-6xl py-7">
                             {props.title}
                         </h2>
                     </div>

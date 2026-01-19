@@ -1,12 +1,11 @@
+import { SectionHeader } from "@/app/components/SectionHeader";
 import { policyData } from "@/app/data/policyData";
 import { Card } from "@heroui/react";
 
 const Policies = () => {
     return (
         <div className="pb-12 space-y-10">
-            <h2 className='font-accent text-center text-5xl font-bold'>
-                Policies
-            </h2>
+            <SectionHeader title="Policies" />
 
             {policyData.map((policy) => (
                 <Card key={policy.id} className="">

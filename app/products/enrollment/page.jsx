@@ -1,11 +1,10 @@
 import AppForm from "@/app/components/AppForm";
+import { SectionHeader } from "@/app/components/SectionHeader";
 
 const Enrollment = () => {
     return (
         <div className="m-auto pb-12">
-            <h2 className='font-accent text-center text-5xl font-bold'>
-                Enrollment Application
-            </h2>
+            <SectionHeader title='Enrollment Application' />
 
             <AppForm />
         </div>
